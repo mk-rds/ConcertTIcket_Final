@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package demo;
+package FinalAssignment;
 
 
 public class TicketType {
@@ -35,7 +35,7 @@ public class TicketType {
 
     @Override
     public String toString() {
-        return "TicketType{" + "CAT1=" + CAT1 + ", CAT2=" + CAT2 + '}';
+        return "TicketType " + "CAT 1 = " + CAT1 + ", CAT 2 = " + CAT2 ;
     }
     
     public static void  TicketStockBP(TicketType[] a,int quantity,int option){
@@ -52,13 +52,13 @@ public class TicketType {
             }
             
             else
-                System.out.print("the stock is empty or you didnt type in quantity");
+                System.out.print("Quantity not specified or we have run out of stock, sorry for the inconvenience!");
             
                 }
         
         
-        System.out.print("cat1 : " + a[0].CAT1);
-        System.out.print("cat2 : " + a[0].CAT2);
+        System.out.print("CAT 1 : " + a[0].CAT1);
+        System.out.print("\nCAT 2 : " + a[0].CAT2);
        
         
     }
@@ -78,7 +78,7 @@ public class TicketType {
             }
             
             else
-                  System.out.print("you input error");
+                  System.out.print("User input error");
         }
         
         return total;
