@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package demo;
+package FinalAssignment;
 
 import java.util.ArrayList;
 
@@ -12,47 +12,38 @@ import java.util.ArrayList;
  * @author User
  */
 public class BlackPink extends Concert {
+
     private TicketType TicketType;
 
-    
-  
-    public BlackPink(String conName, String conTime,TicketType TicketType) {
-        super(conName, conTime);
+    public BlackPink(String conName, String conTime, String conDesc, String conDest, String conArtist, TicketType TicketType) {
+        super(conName, conTime, conDesc, conDest, conArtist);
         this.TicketType = TicketType;
     }
-    
-    
-    
-    
-    public static String printSongList(){
+
+    public static String printSongList() {
         ArrayList<String> songList = new ArrayList<>();
-        songList.add("ddu-ddu-ddu");
-        songList.add("kill this love");
-        
-        for(int i=0;i<=songList.size()-1;i++){
-            
+        songList.add("\nSONGS PERFORMING : \n -Kill This Love");
+        songList.add(" -Don't Know What to Do");
+        songList.add(" -Kick It");
+        songList.add(" -Hope Not");
+        songList.add(" -Ddu-Du Ddu-Du");
+
+        for (int i = 0; i <= songList.size() - 1; i++) {
+
             System.out.println(songList.get(i));
-                 
+
         }
-        
+
         return "";
-           
-                 
-        }
-    
-    
+
+    }
 
     @Override
     public String toString() {
-        return super.toString() + "BlackPink{" + "TicketType=" + TicketType + '}';
+        return super.toString() + "\nType of Ticket (BLACKPINK) : " + TicketType;
     }
 
-   
+}
 
   
-   
-    
-    
-    }
-    
 
