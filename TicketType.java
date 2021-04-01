@@ -1,22 +1,27 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package demo;
 
 public class TicketType {
 
     private int CAT1, CAT2, CAT3, CAT4, CAT5;
     private static int ticketPrice;
-    private static int total=0;
+    public static int total=0;
+    
+    
 
+    public TicketType(){
+        
+    }
+    
     public TicketType(int CAT1, int CAT2, int CAT3, int CAT4, int CAT5) {
         this.CAT1 = CAT1;
         this.CAT2 = CAT2;
         this.CAT3 = CAT3;
         this.CAT4 = CAT4;
         this.CAT5 = CAT5;
+    }
+    
+    public TicketType(int total,int option){
+        this.total = total;
     }
 
     public int getCAT1() {
@@ -64,71 +69,122 @@ public class TicketType {
         return "\nTicketType{" + "\nCAT1=" + CAT1 + "\nCAT2=" + CAT2 + "\nCAT3=" + CAT3 + "\nCAT4=" + CAT4 + "\nCAT5=" + CAT5 + '}';
     }
 
-    public static void TicketStock(TicketType[] a, int quantity, int option) {
+    public static int TicketStock(TicketType[] a, int quantity, int option,int choice) {
 
-        for (int i = 0; i <= a.length -1 ; i++) {
-
-            if (option == 1 && a[i].CAT1 >= 0 && quantity <= a[i].CAT1 ) {
-                a[i].CAT1 -= quantity;
-            } else if (option == 2 && a[i].CAT2 >= 0 && quantity > 0) {
-                a[i].CAT2 -= quantity;
-
-            } else if (option == 3 && a[i].CAT3 >= 0 && quantity > 0) {
-                a[i].CAT3 -= quantity;
-
-            } else if (option == 4 && a[i].CAT4 >= 0 && quantity > 0) {
-                a[i].CAT4 -= quantity;
-
-            } else if (option == 5 && a[i].CAT5 >= 0 && quantity > 0) {
-                a[i].CAT5 -= quantity;
-
-            } else {
-                System.out.print("the stock is empty or you didnt type in quantity\n");
-            }
-        System.out.println("cat1 : " + a[i].CAT1);
-        System.out.println("cat2 : " + a[i].CAT2);
-        System.out.println("cat3 : " + a[i].CAT3);
-        System.out.println("cat4 : " + a[i].CAT4);
-        System.out.println("cat5 : " + a[i].CAT5);
-            System.out.println(i);
-            System.out.println(a.length);
-        }
-        //
+    if(choice == 1){
         
-
-    }
-
-    public static int CalcTicketPrice(TicketType[] a, int quantity, int option) {
-        
-        for (int i = 0; i <= a.length - 1; i++) {
-
-            if (option == 1 && a[i].CAT1 >= 0 && quantity > 0) {
+            if (option == 1 && a[0].CAT1 - quantity >= 0) {
+                a[0].CAT1 -= quantity;
                 ticketPrice = 900;
                 total = ticketPrice * quantity;
-                
-            } else if (option == 2 && a[i].CAT2 >= 0 && quantity > 0) {
+            } 
+            else if (option == 2  && a[0].CAT2 - quantity >= 0) {
+                a[0].CAT2 -= quantity;
                 ticketPrice = 800;
-                total = ticketPrice * quantity;
-               
-            } else if (option == 3 && a[i].CAT3 >= 0 && quantity > 0) {
+                total = ticketPrice * quantity;            
+            }            
+            else if (option == 3  && a[0].CAT3 - quantity >= 0) {
+                a[0].CAT3 -= quantity;
                 ticketPrice = 700;
                 total = ticketPrice * quantity;
-                
-            } else if (option == 4 && a[i].CAT4 >= 0 && quantity > 0) {
+            }           
+            else if (option == 4 && a[0].CAT4 - quantity >= 0) {
+                a[0].CAT4 -= quantity;
                 ticketPrice = 600;
                 total = ticketPrice * quantity;
-         
-            }  else if (option == 5 && a[i].CAT5 >= 0 && quantity > 0) {
+            }             
+            else if (option == 5  && a[0].CAT5 - quantity >= 0) {
+                a[0].CAT5 -= quantity;
                 ticketPrice = 500;
                 total = ticketPrice * quantity;
-           
-            }
+            }            
             else {
-                System.out.print("you input error");
+                System.out.print("insufficient");
+                
             }
-        }
-
+           
+                    }
+        
+                
+    
+    else if(choice == 2){
+      
+            if (option == 1 && a[1].CAT1 - quantity >= 0) {
+                a[1].CAT1 -= quantity;
+                ticketPrice = 900;
+                total = ticketPrice * quantity;
+            } 
+            else if (option == 2  && a[1].CAT2 - quantity >= 0) {
+                a[1].CAT2 -= quantity;
+                ticketPrice = 800;
+                total = ticketPrice * quantity;            
+            }            
+            else if (option == 3  && a[1].CAT3 - quantity >= 0) {
+                a[1].CAT3 -= quantity;
+                ticketPrice = 700;
+                total = ticketPrice * quantity;
+            }           
+            else if (option == 4 && a[1].CAT4 - quantity >= 0) {
+                a[1].CAT4 -= quantity;
+                ticketPrice = 600;
+                total = ticketPrice * quantity;
+            }             
+            else if (option == 5  && a[1].CAT5 - quantity >= 0) {
+                a[1].CAT5 -= quantity;
+                ticketPrice = 500;
+                total = ticketPrice * quantity;
+            }            
+            else {
+                System.out.print("the stock is not sufficient or you didnt type in quantity\n");
+            }
+                                                }
+        
+                        
+        
+        
         return total;
     }
+    
+    public static void printReceipt(int option,Concert Concert,int quantity){
+                        
+        System.out.println();
+        System.out.println("---------------------------------");
+        System.out.println("Concert Name : " + Concert.getConName());
+        System.out.println("Concert Artist : " + Concert.getConArtist());
+        System.out.println("Concert Time : " + Concert.getConTime());
+        System.out.println("Concert Destination : " + Concert.getConDest());
+        System.out.println("---------------------------------");
+       
+        switch (option) {
+            case 1:
+                System.out.print("Type : CAT1" );
+                break;
+            case 2:
+                System.out.print("Type : CAT2" );
+                break;
+            case 3:
+                System.out.print("Type : CAT3" );
+                break;
+            case 4:
+                System.out.print("Type : CAT4" );
+                break;
+            case 5:
+                System.out.print("Type : CAT5" );
+                break;
+            default:
+                break;
+        }
+        
+        System.out.println("\nTOTAL TICKET PURCHASE : " + quantity);
+        System.out.println("************************************");
+        System.out.println("\nTOTAL PAYMENT :  " +  total);
+        
+    }
+
+    
+        
+
+        
+    
 
 }
