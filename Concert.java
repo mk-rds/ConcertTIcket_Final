@@ -10,6 +10,13 @@ package FinalAssignment;
  *
  * @author Gigabyte
  */
+package FinalAssignment;
+
+
+/**
+ *
+ * @author Gigabyte
+ */
 public class Concert {
 
     private String conName;
@@ -77,8 +84,9 @@ public class Concert {
 
     @Override
     public String toString() {
-        return "\nConcert Name : " + conName + "\nConcert Artist : " + conArtist + "\nConcert Time: " + conTime + "\nConcert Destination : " + conDest + "\nConcert Description : "
-                + conDesc;
+        return "\n\t\t\t\t\t\t" + conName 
+                + "\n\n\t\t\t     Artist\t\t: " + conArtist + "\t\t\t Time\t: " + conTime 
+                + "\n\t\t\t     Destination\t: " + conDest + "\n\t\t\t     Description\t: " + conDesc;
     }
 
 } 
