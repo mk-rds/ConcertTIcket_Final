@@ -22,11 +22,11 @@ public class BlackPink extends Concert {
 
     public static String printSongList() {
         ArrayList<String> songList = new ArrayList<>();
-        songList.add("\nSONGS PERFORMING : \n -Kill This Love");
-        songList.add(" -Don't Know What to Do");
-        songList.add(" -Kick It");
-        songList.add(" -Hope Not");
-        songList.add(" -Ddu-Du Ddu-Du");
+        songList.add("\n\t\t\t\t\t\t\t   SONGS PERFORMING\t\n\n\t\t\t\t\t\t |\t'Kill This Love'\t\t|");
+        songList.add("\t\t\t\t\t\t |\t'Don't Know What to Do'\t\t|");
+        songList.add("\t\t\t\t\t\t |\t'Kick It'\t\t\t|");
+        songList.add("\t\t\t\t\t\t |\t'Hope Not'\t\t\t|");
+        songList.add("\t\t\t\t\t\t |\t'Ddu-Du Ddu-Du'\t\t\t|");
 
         for (int i = 0; i <= songList.size() - 1; i++) {
 
@@ -40,7 +40,7 @@ public class BlackPink extends Concert {
 
     @Override
     public String toString() {
-        return super.toString() + "\nType of Ticket (BLACKPINK) : " + TicketType;
+        return super.toString() + "\n\n                             Available Tickets\t:" + TicketType;
     }
 
 }
