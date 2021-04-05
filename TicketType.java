@@ -1,11 +1,11 @@
 package demo;
 
-public class TicketType {
+public class TicketType extends Concert{
 
     private int CAT1, CAT2, CAT3, CAT4, CAT5;
     private static int ticketPrice;
     public static int total=0;
-    
+    private static int seatA,seatB,seatC,seatD,seatE;
     
 
     public TicketType(){
@@ -69,8 +69,9 @@ public class TicketType {
         return "\nTicketType{" + "\nCAT1=" + CAT1 + "\nCAT2=" + CAT2 + "\nCAT3=" + CAT3 + "\nCAT4=" + CAT4 + "\nCAT5=" + CAT5 + '}';
     }
 
-    public static int TicketStock(TicketType[] a, int quantity, int option,int choice) {
-
+    public static void TicketStock(TicketType[] a, int quantity, int option,int choice) {
+        
+        
     if(choice == 1){
         
             if (option == 1 && a[0].CAT1 - quantity >= 0) {
@@ -142,7 +143,7 @@ public class TicketType {
                         
         
         
-        return total;
+        
     }
     
     public static void printReceipt(int option,Concert Concert,int quantity){
@@ -152,24 +153,48 @@ public class TicketType {
         System.out.println("Concert Name : " + Concert.getConName());
         System.out.println("Concert Artist : " + Concert.getConArtist());
         System.out.println("Concert Time : " + Concert.getConTime());
-        System.out.println("Concert Destination : " + Concert.getConDest());
+        System.out.println("Concert Destination : " + Concert.getConDest());       
         System.out.println("---------------------------------");
        
+        int[] seat = new int[quantity];
+        
         switch (option) {
             case 1:
-                System.out.print("Type : CAT1" );
+                System.out.println("Type : CAT1" );
+                System.out.print("Seat :");
+                for(int i=0;i<quantity;i++){                   
+                System.out.print("A" + seatA++ + " ");
+                seat[i] = i;
+                } 
                 break;
             case 2:
-                System.out.print("Type : CAT2" );
+                System.out.print("Type : CAT2" );              
+                System.out.print("Seat :");
+                for(int i=0;i<quantity;i++){                   
+                System.out.print("B" + seatB++ + " ");                  
+                } 
+                
                 break;
             case 3:
                 System.out.print("Type : CAT3" );
+                System.out.print("Seat :");
+                for(int i=0;i<quantity;i++){                   
+                System.out.print("C" + seatC++ + " ");                  
+                } 
                 break;
             case 4:
                 System.out.print("Type : CAT4" );
+                System.out.print("Seat :");
+                for(int i=0;i<quantity;i++){                   
+                System.out.print("D" + seatD++ + " ");                  
+                } 
                 break;
             case 5:
                 System.out.print("Type : CAT5" );
+                System.out.print("Seat :");
+                for(int i=0;i<quantity;i++){                   
+                System.out.print("E" + seatE++ + " ");                  
+                } 
                 break;
             default:
                 break;
@@ -178,7 +203,17 @@ public class TicketType {
         System.out.println("\nTOTAL TICKET PURCHASE : " + quantity);
         System.out.println("************************************");
         System.out.println("\nTOTAL PAYMENT :  " +  total);
+       
         
+        
+        
+        
+    }
+    
+    public static int printRecord(int quantity){
+        System.out.print("quantity" +  quantity);
+        
+        return quantity;
     }
 
     
