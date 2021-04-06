@@ -17,8 +17,9 @@ public class TestDemo {
     public static void main(String[] args) {
 
         int choice,selection,option,quantity,total=0;
-       
         
+        Register.login();
+     
         Concert[] ConcertArr = new Concert[5];
         TicketType[] ticket = {new TicketType(50,60,70,80,90)};
         ConcertArr[0] = new BlackPink("BLACKPINK Concert for NEW ALBUM RELEASE", "7 MARCH 2021", "KPOP SENSATION BLACKPINK RETURNS", "BUKIT JALIL STADIUM", "BLACKPINK", ticket[0]);
