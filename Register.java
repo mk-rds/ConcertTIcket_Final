@@ -161,14 +161,14 @@ public class Register {
         System.out.print("confirm password :");
         confpassword1 = confirm.nextLine();
 
-        compare = password1.matches(confpassword1);
+        compare = password1.equals(confpassword1);
 
         while (!compare) {
 
             System.out.println("Password not match ! try again !!!");
             System.out.print("confirm password :");
             confpassword1 = confirm.nextLine();
-            compare = password1.matches(confpassword1);
+            compare = password1.equals(confpassword1);
         }
         System.out.println("Password correct!");
         System.out.println("Registered Succesfully" + "\nHi " + this.getName1());
