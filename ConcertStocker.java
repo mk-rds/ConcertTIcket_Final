@@ -3,36 +3,50 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package demo4;
+package demo3;
 
 /**
  *
  * @author User
  */
-public class ConcertStocker extends Staff {
-    private double allowanceRate;
+public class ConcertStocker extends Staff{
+    private int stockSales;
+    private int code = 2021;
 
-    public ConcertStocker(String name, int YearJoined, double basicSalary,double allowanceRate) {
-        super(name, YearJoined, basicSalary);
-        this.allowanceRate = allowanceRate;
+    public ConcertStocker() {
+        
     }
 
-    public double getAllowanceRate() {
-        return allowanceRate;
+    public int getStockSales() {
+        return stockSales;
     }
 
-    public void setAllowanceRate(double allowanceRate) {
-        this.allowanceRate = allowanceRate;
+    public void setStockSales(int stockSales) {
+        this.stockSales = stockSales;
     }
 
-    @Override
-    public String toString() {
-        return "ConcertStocker{" + "allowanceRate=" + allowanceRate + '}';
+    public int getCode() {
+        return code;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
     }
     
-    @Override
-    public double CalcSalary(){
-        return this.getBasicSalary()*allowanceRate + this.getBasicSalary();
+    
+   
+    
+    
+    
+    
+    public static void AddTicketStock(ticket ticket,int cat1,int cat2,int cat3,int cat4,int cat5){
+        ticket.setCAT1(cat1);
+        ticket.setCAT2(cat2);
+        ticket.setCAT3(cat3);
+        ticket.setCAT4(cat4);
+        ticket.setCAT5(cat5);
+        
     }
+    
     
 }
