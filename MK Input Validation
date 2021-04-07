@@ -1,0 +1,23 @@
+                                System.out.print("Select ticket type:");
+                                option = input.nextInt();
+
+                                while (option < 1 || option > 5) {
+                                    System.out.println("Invalid Type \nTry Again");
+                                    System.out.println("only can choose 1-5");
+                                    System.out.print("Select ticket type:");
+                                    option = input.nextInt();
+
+                                }
+
+                                System.out.print("How many tickets do you wish to purchase ");
+                                quantity = input.nextInt();
+                                while (quantity < 1 ) {
+                                    System.out.println("Invalid Quantity \nTry Again");
+                                    System.out.print("How many tickets do you wish to purchase ");
+                                    quantity = input.nextInt();
+
+                                }
+
+                               
+                                TicketType.TicketStock(ticket, quantity, option, choice);
+                                TicketType.printReceipt(ticket,option, ConcertArr[0], quantity);
